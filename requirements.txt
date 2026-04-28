@@ -1,0 +1,8 @@
+flask
+pytesseract
+gtts
+opencv-python-headless
+Pillow
+numpy
+gunicorn
+python-dotenv

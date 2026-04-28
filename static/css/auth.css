@@ -1,0 +1,394 @@
+/* =============================================
+   VOICEDOC — auth.css
+   Warm Neutral Pastel — login, register, profile
+   ============================================= */
+
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+}
+
+.auth-bg-glow {
+  position: fixed;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(139,115,85,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brand */
+.auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.auth-brand .brand-icon { font-size: 1.6rem; }
+
+.auth-brand .brand-name {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+/* Card */
+.auth-card {
+  padding: 2rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-title {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.auth-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  line-height: 1.55;
+}
+
+/* Error box */
+.auth-error {
+  background: var(--rose-muted);
+  border: 1px solid var(--rose-light);
+  border-radius: var(--radius-sm);
+  color: var(--rose);
+  font-size: 0.83rem;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 1.1rem;
+  text-align: center;
+}
+
+/* Form */
+.auth-form { display: flex; flex-direction: column; gap: 0.9rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-family: 'Geist Mono', monospace;
+}
+
+.input-wrap { position: relative; }
+
+.form-input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: 'Geist', sans-serif;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all var(--transition);
+}
+
+.form-input::placeholder { color: var(--text-muted); }
+
+.form-input:focus {
+  border-color: var(--accent-light);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(139,115,85,0.1);
+}
+
+.input-wrap .form-input { padding-right: 2.5rem; }
+
+.toggle-pw {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.toggle-pw:hover { opacity: 1; }
+
+/* Password strength */
+.pw-strength { display: flex; align-items: center; gap: 0.65rem; }
+
+.pw-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pw-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 10px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.pw-label {
+  font-size: 0.72rem;
+  font-family: 'Geist Mono', monospace;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+/* Auth button */
+.auth-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.4rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Geist', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: #faf8f5;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.auth-btn:hover:not(:disabled) {
+  background: #7a6448;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* Switch link */
+.auth-switch {
+  text-align: center;
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.auth-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.auth-link:hover { color: var(--accent-light); }
+
+/* Navbar logout */
+.logout-btn {
+  background: var(--rose-muted);
+  border: 1px solid var(--rose-light);
+  color: var(--rose);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  font-family: 'Geist', sans-serif;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: rgba(181,117,106,0.2);
+  border-color: var(--rose);
+}
+
+.nav-user {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'Geist Mono', monospace;
+}
+
+/* --- Profile Dropdown --- */
+.profile-wrap { position: relative; }
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem 0.3rem 0.35rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-primary);
+}
+
+.profile-btn:hover {
+  border-color: var(--accent-light);
+  background: var(--accent-muted);
+}
+
+.profile-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.profile-name {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.profile-arrow {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.profile-btn.open .profile-arrow { transform: rotate(180deg); }
+
+/* Dropdown panel */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  animation: fadeInUp 0.18s ease;
+  overflow: hidden;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+}
+
+.dropdown-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.dropdown-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+
+.dropdown-name {
+  font-family: 'Geist', sans-serif;
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.dropdown-role {
+  font-size: 0.7rem;
+  font-family: 'Geist Mono', monospace;
+  color: var(--accent);
+  background: var(--accent-muted);
+  border-radius: 8px;
+  padding: 0.1rem 0.45rem;
+  width: fit-content;
+}
+
+.dropdown-divider { height: 1px; background: var(--border); }
+
+.dropdown-stats { display: flex; flex-direction: column; }
+
+.dstat {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  transition: background var(--transition);
+  cursor: default;
+}
+
+.dstat:hover { background: var(--bg-secondary); }
+
+.dstat-icon { font-size: 0.85rem; opacity: 0.7; }
+
+.dstat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: 'Geist', sans-serif;
+}
+
+.dropdown-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  color: var(--rose);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-family: 'Geist', sans-serif;
+  transition: background var(--transition);
+}
+
+.dropdown-logout:hover { background: var(--rose-muted); }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-card { padding: 1.4rem 1.1rem; }
+}
