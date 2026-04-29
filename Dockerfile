@@ -25,8 +25,8 @@ COPY . .
 # Create necessary folders
 RUN mkdir -p uploads static/audio
 
-# Expose port
-EXPOSE 8080
+# Expose Render's expected web port
+EXPOSE 10000
 
 # Start app
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-10000} app:app"]
